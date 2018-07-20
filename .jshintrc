@@ -1,0 +1,10 @@
+{
+    "esversion": 6,
+    "node": true,
+    "multistr": true,
+    "globals": {
+        "window": false,
+        "document": false,
+        "QUnit": false
+    }
+}
