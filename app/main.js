@@ -1,20 +1,17 @@
-require(['config'], function (config) {
+define(function (require) {
 
-    define(function (require) {
+    var u = require('app/util');
+    var onURLsMatching = u.onURLsMatching;
+    var grid = require('app/gallery-tools/grid');
 
-        var u = require('util');
-        var onURLsMatching = u.onURLsMatching;
-        var grid = require('gallery-tools/grid');
+    console.log('DWP EXT LOADED');
 
-        console.log('DWP EXT LOADED');
-
-        // onURLsMatching(/hospitality\/laminate-collections\/?$/, function () {
-        //     grid.addFilterToGridWrapper(
-        //         document.getElementById('yui_3_17_2_1_1521151995485_175'),
-        //         'Search Collections'
-        //     );
-        // });
-
-    });
+    // onURLsMatching(/hospitality\/laminate-collections\/?$/, function () {
+    //     console.log('DWP LAMINATE COLLECTIONS');
+    //     grid.addFilterToGridWrapper(
+    //         document.getElementById('block-yui_3_17_2_7_1478631096807_6085'),
+    //         'Search Collections'
+    //     );
+    // });
 
 });

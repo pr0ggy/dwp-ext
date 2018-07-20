@@ -1,6 +1,6 @@
 define(function (require) {
 
-    var dom = require('dom');
+    var dom = require('app/dom');
     var $ = require('lib/jbone');
     var R = require('lib/ramda');
 
@@ -26,7 +26,7 @@ define(function (require) {
             });
 
             const $gridSlides = $('.slide', gridWrapper);
-            const $searchBlock = dom.createSearchFilterBlock();
+            const $searchBlock = dom.createSearchFilterBlock(searchPlaceholder);
             $searchBlock.select('.search-filter-input').on('input', filterSlidesAfterInactivity($gridSlides));
 
             $(gridWrapper).addBefore($searchBlock);
