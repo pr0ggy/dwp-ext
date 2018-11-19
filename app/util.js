@@ -1,8 +1,25 @@
-define({
+define(function (require) {
 
-    onURLsMatching(urlRegEx, doFn) {
+    const R = require('lib/ramda');
+
+
+    const absPathGen = R.curry(function (pathRoot, dirSegmentsFromRoot, resource) {
+        const relativePath = dirSegmentsFromRoot.join('/') + '/' + resource;
+        return `${pathRoot}/${relativePath}`;
+    });
+
+    const jsDelivrAbsURL = absPathGen('https://cdn.jsdelivr.net/gh/pr0ggy/dwp-ext@master');
+
+    function onURLsMatching(urlRegEx, doFn) {
         if (urlRegEx.test(window.location.href) == false) return;
         doFn();
+    }
+
+
+    return {
+        absPathGen,
+        jsDelivrAbsURL,
+        onURLsMatching
     }
 
 });

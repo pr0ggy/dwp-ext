@@ -2,7 +2,7 @@ define(function (require) {
 
     const $ = require('lib/zepto-1.2.0');
     const R = require('lib/ramda');
-    const ui = require('app/ui');
+    const dom = require('app/dom');
 
 
     function addFilterToGridWrapper(gridWrapper, searchPlaceholder) {
@@ -19,8 +19,8 @@ define(function (require) {
             const filterSlides = function () {
                 $slidesToFilter.forEach(R.ifElse(
                     slideTitleContains($filterTextBox.val()),
-                    ui.showElement,
-                    ui.hideElement
+                    dom.showElement,
+                    dom.hideElement
                 ));
             };
 
@@ -28,7 +28,7 @@ define(function (require) {
         });
 
         const $gridSlides = $('.slide', gridWrapper);
-        const $searchBlock = ui.createSearchFilterBlock(searchPlaceholder);
+        const $searchBlock = dom.createSearchFilterBlock(searchPlaceholder);
         $('.search-filter-input', $searchBlock).on('input', filterSlidesAfterInactivity($gridSlides));
 
         $(gridWrapper).before($searchBlock);

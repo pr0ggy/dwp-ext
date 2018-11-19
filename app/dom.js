@@ -19,11 +19,19 @@ define(function (require) {
         $(el).show();
     }
 
+    function toggleElement(shouldShow, el) {
+        if (typeof shouldShow === 'Function')
+            shouldShow = shouldShow();
+
+        $(el).toggle(shouldShow);
+    }
+
 
     return {
         createSearchFilterBlock,
         hideElement,
-        showElement
+        showElement,
+        toggleElement
     };
 
 });
