@@ -29,7 +29,7 @@ define(function (require) {
             const $searchBlock = dom.createSearchFilterBlock(searchPlaceholder);
             $('.search-filter-input', $searchBlock).on('input', filterSlidesAfterInactivity($gridSlides));
 
-            $(gridWrapper).addBefore($searchBlock);
+            gridWrapper.parentNode.insertBefore($searchBlock.get(1), gridWrapper);
         }
     };
 
