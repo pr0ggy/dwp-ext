@@ -8,10 +8,10 @@ define(function (require) {
 
     onURLsMatching(/hospitality\/laminate-collections\/?$/, function () {
         console.log('DWP LAMINATE COLLECTIONS');
-    //     grid.addFilterToGridWrapper(
-    //         document.getElementById('block-yui_3_17_2_7_1478631096807_6085'),
-    //         'Search Collections'
-    //     );
+        grid.addFilterToGridWrapper(
+            document.getElementById('block-yui_3_17_2_7_1478631096807_6085'),
+            'Search Collections'
+        );
     });
 
 });

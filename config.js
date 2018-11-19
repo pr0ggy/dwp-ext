@@ -1,5 +1,3 @@
 requirejs.config({
-    paths: {
-        
-    }
+
 });
