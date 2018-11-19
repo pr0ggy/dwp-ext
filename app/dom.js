@@ -1,6 +1,6 @@
 define(function (require) {
 
-    var $ = require('dwp-ext/lib/jbone');
+    var $ = require('lib/jbone');
 
     return {
         createSearchFilterBlock: function (fieldPlaceholder) {
