@@ -1,35 +1,37 @@
 define(function (require) {
 
-    var dom = require('app/dom');
-    var $ = require('lib/jbone');
+    var ui = require('app/ui');
+    var $ = require('lib/zepto-1.2.0');
     var R = require('lib/ramda');
 
     return {
-        addFilterToGridWrapper: function (gridWrapper, searchPlaceholder) {
+        addFilterToGridWrapper(gridWrapper, searchPlaceholder) {
             const filterSlideBasedOnSearchTerm = R.curry(function (filterString, slide) {
                 const $slide = $(slide);
-                if ($('.image-slide-title', $slide).get(0).innerText.toLowerCase().indexOf(filterString.toLowerCase()) > -1)
-                    $slide.removeClass('yui3-widget-hidden');
+                if ($('.image-slide-title', $slide).prop('innerText').toLowerCase().indexOf(filterString.toLowerCase()) > -1)
+                    $slide.show();
                 else
-                    $slide.addClass('yui3-widget-hidden');
+                    $slide.hide();
             });
+
+            var filterTimer = null;
 
             const filterSlidesAfterInactivity = R.curry(function($slidesToFilter, e) {
                 const $filterTextBox = $(e.target);
-                clearTimeout($filterTextBox.data('filterTimer'));
+                clearTimeout(filterTimer);
 
-                const doFilter = function () {
-                    $slidesToFilter.toArray().forEach(filterSlideBasedOnSearchTerm($filterTextBox.val()));
+                const filterSlides = function () {
+                    $slidesToFilter.forEach(filterSlideBasedOnSearchTerm($filterTextBox.val()));
                 };
 
-                $filterTextBox.data('filterTimer', setTimeout(doFilter, 500));
+                filterTimer = setTimeout(filterSlides, 500);
             });
 
             const $gridSlides = $('.slide', gridWrapper);
-            const $searchBlock = dom.createSearchFilterBlock(searchPlaceholder);
+            const $searchBlock = ui.createSearchFilterBlock(searchPlaceholder);
             $('.search-filter-input', $searchBlock).on('input', filterSlidesAfterInactivity($gridSlides));
 
-            gridWrapper.parentNode.insertBefore($searchBlock.get(1), gridWrapper);
+            $(gridWrapper).before($searchBlock);
         }
     };
 
