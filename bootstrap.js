@@ -1,3 +1,3 @@
-require(['config'], function (config) {
-    require(['app/main']);
+require(['config'], function () {
+    require(['dwp-ext/app/main']);
 });

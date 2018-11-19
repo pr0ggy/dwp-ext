@@ -1,4 +1,6 @@
-define(['lib/jbone'], function ($) {
+define(function (require) {
+
+    var $ = require('dwp-ext/lib/jbone');
 
     return {
         createSearchFilterBlock: function (fieldPlaceholder) {

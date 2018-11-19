@@ -1,8 +1,8 @@
 define(function (require) {
 
-    var u = require('app/util');
+    var u = require('dwp-ext/app/util');
     var onURLsMatching = u.onURLsMatching;
-    var grid = require('app/gallery-tools/grid');
+    var grid = require('dwp-ext/app/gallery-tools/grid');
 
     console.log('DWP EXT LOADED');
 
