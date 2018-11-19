@@ -1,6 +1,6 @@
 define({
 
-    onURLsMatching: function (urlRegEx, doFn) {
+    onURLsMatching(urlRegEx, doFn) {
         if (urlRegEx.test(window.location.href) == false) return;
         doFn();
     }
