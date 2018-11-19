@@ -27,7 +27,7 @@ define(function (require) {
 
             const $gridSlides = $('.slide', gridWrapper);
             const $searchBlock = dom.createSearchFilterBlock(searchPlaceholder);
-            $searchBlock.select('.search-filter-input').on('input', filterSlidesAfterInactivity($gridSlides));
+            $('.search-filter-input', $searchBlock).on('input', filterSlidesAfterInactivity($gridSlides));
 
             $(gridWrapper).addBefore($searchBlock);
         }
