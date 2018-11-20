@@ -19,11 +19,16 @@ define(function (require) {
         const availableFinishNamesForThisGroup = Object.keys(currentGroupAvailableFinishURLMap);
         if (availableFinishNamesForThisGroup.length <= 1) return;
 
-        const finishOptionImageTagMap = R.map(function(imagePath) {
-            return `<img class="collection-available-finish-swatch" src="${imagePath}" />`
-        }, R.pick(availableFinishNamesForThisGroup, dwpConf.finishOptionSwatchURLMap));
+        const finishOptionLinkElements = R.map(function(finishName) {
+            return `
+                    <a href="${currentGroupAvailableFinishURLMap[finishName]}">
+                        <img src="${dwpConf.finishOptionSwatchURLMap[finishName]}" />
+                        <span>${finishName}</span>
+                    </a>
+            `;
+        }, availableFinishNamesForThisGroup);
 
-        console.log(finishOptionImageTagMap);
+        console.log(finishOptionLinkElements);
         return;
 
         const $groupResourcesBlock = $('#page .col:first-child > div:last-child');
@@ -33,10 +38,9 @@ define(function (require) {
                     <h2>Available Finishes</h2>\
                     <p><a href="#">'+'<img src="https://ofdist.com/wp-content/uploads/ultra-laminate-walnut-strand-swatch.jpg"/>'+'</a></p>\
                 </div>\
-            </div>').hide();
+            </div>');
 
         $groupResourcesBlock.before($finishOptionsBlock);
-        $finishOptionsBlock.show();
     }
 
 
