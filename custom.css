@@ -2,3 +2,10 @@ img.collection-available-finish-swatch {
     width: 20px;
     height: 20px;
 }
+
+a.collection-finish-link {
+    display: block;
+}
+a.collection-finish-link img {
+    float: left;
+}

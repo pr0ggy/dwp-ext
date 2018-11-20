@@ -21,24 +21,21 @@ define(function (require) {
 
         const finishOptionLinkElements = R.map(function(finishName) {
             return `
-                    <a href="${currentGroupAvailableFinishURLMap[finishName]}">
+                    <a class="collection-finish-link" href="${currentGroupAvailableFinishURLMap[finishName]}">
                         <img src="${dwpConf.finishOptionSwatchURLMap[finishName]}" />
                         <span>${finishName}</span>
                     </a>
             `;
         }, availableFinishNamesForThisGroup);
 
-        console.log(finishOptionLinkElements);
-        return;
-
         const $groupResourcesBlock = $('#page .col:first-child > div:last-child');
-        const $finishOptionsBlock = $('\
-            <div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-available-finishes">\
-                <div class="sqs-block-content">\
-                    <h2>Available Finishes</h2>\
-                    <p><a href="#">'+'<img src="https://ofdist.com/wp-content/uploads/ultra-laminate-walnut-strand-swatch.jpg"/>'+'</a></p>\
-                </div>\
-            </div>');
+        const $finishOptionsBlock = $(`
+            <div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-available-finishes">
+                <div class="sqs-block-content">
+                    <h2>Available Finishes</h2>
+                    ${finishOptionLinkElements.join("\n")}
+                </div>
+            </div>`);
 
         $groupResourcesBlock.before($finishOptionsBlock);
     }
