@@ -2,15 +2,18 @@ define(function (require) {
 
     const u = require('app/util');
     const dwpConfig = {};
+    const jsdelivrVersion = '7ea975fa28b026999fa1c5f724426de3014123c2';
 
-
-    const pathForSwatch = u.jsDelivrAbsURL(['img', 'finish-swatches-small']);
+    const pathForFinishSwatchImage = u.absPathGen(
+        `https://cdn.jsdelivr.net/gh/pr0ggy/dwp-ext@${jsdelivrVersion}`,
+        ['img', 'finish-swatches-small']
+    );
 
     dwpConfig.finishOptionSwatchURLMap = {
-        'Asian Night': pathForSwatch('asian-night.png'),
-        'Cafelle': pathForSwatch('cafelle.png'),
-        'Cafelle + Silver Oak Ply': pathForSwatch('cafelle__silver-oak-ply.png'),
-        'Forged Steel + Silver Alchemy': pathForSwatch('forged-steel__silver-alchemy.png')
+        'Asian Night': pathForFinishSwatchImage('asian-night.png'),
+        'Cafelle': pathForFinishSwatchImage('cafelle.png'),
+        'Cafelle + Silver Oak Ply': pathForFinishSwatchImage('cafelle__silver-oak-ply.png'),
+        'Forged Steel + Silver Alchemy': pathForFinishSwatchImage('forged-steel__silver-alchemy.png')
     };
 
     const dwpLaminateCollectionAbsURL = u.absPathGen('http://www.duboiswood.com/hospitality/laminate-collections', []);

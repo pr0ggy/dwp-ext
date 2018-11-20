@@ -4,11 +4,9 @@ define(function (require) {
 
 
     const absPathGen = R.curry(function (pathRoot, dirSegmentsFromRoot, resource) {
-        const relativePath = dirSegmentsFromRoot.join('/') + '/' + resource;
+        const relativePath = dirSegmentsFromRoot && dirSegmentsFromRoot.length ? `${dirSegmentsFromRoot.join('/')}/${resource}` : resource;
         return `${pathRoot}/${relativePath}`;
     });
-
-    const jsDelivrAbsURL = absPathGen('https://cdn.jsdelivr.net/gh/pr0ggy/dwp-ext@7ea975fa28b026999fa1c5f724426de3014123c2');
 
     function onURLsMatching(urlRegEx, doFn) {
         if (urlRegEx.test(window.location.href) == false) return;
@@ -18,8 +16,7 @@ define(function (require) {
 
     return {
         absPathGen,
-        jsDelivrAbsURL,
         onURLsMatching
-    }
+    };
 
 });

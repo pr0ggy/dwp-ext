@@ -1,0 +1,17 @@
+img.collection-available-finish-swatch {
+    width: 20px;
+    height: 20px;
+}
+
+div.finish-option-links-wrapper {
+    -moz-column-count: 3;
+    -moz-column-gap: 10px;
+    -webkit-column-count: 3;
+    -webkit-column-gap: 10px;
+    column-count: 3;
+    column-gap: 10px;
+}
+a.collection-finish-link {
+    display: block;
+    margin-bottom: 6px;
+}
