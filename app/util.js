@@ -8,7 +8,7 @@ define(function (require) {
         return `${pathRoot}/${relativePath}`;
     });
 
-    const jsDelivrAbsURL = absPathGen('https://cdn.jsdelivr.net/gh/pr0ggy/dwp-ext@master');
+    const jsDelivrAbsURL = absPathGen('https://cdn.jsdelivr.net/gh/pr0ggy/dwp-ext@7ea975fa28b026999fa1c5f724426de3014123c2');
 
     function onURLsMatching(urlRegEx, doFn) {
         if (urlRegEx.test(window.location.href) == false) return;
