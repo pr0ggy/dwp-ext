@@ -4,11 +4,11 @@ img.collection-available-finish-swatch {
 }
 
 div.finish-option-links-wrapper {
-    -moz-column-count: 3;
+    -moz-column-count: 2;
     -moz-column-gap: 10px;
-    -webkit-column-count: 3;
+    -webkit-column-count: 2;
     -webkit-column-gap: 10px;
-    column-count: 3;
+    column-count: 2;
     column-gap: 10px;
 }
 a.collection-finish-link {
