@@ -1,14 +1,10 @@
 define(function (require) {
 
-    const u = require('app/util');
+    const R = require('lib/ramda');
     const dwpConfig = {};
-    const jsdelivrVersion = 'e3e3b2891a33c9c4b0218ad7243c15fe219b3441';
 
 
-    const pathForFinishSwatchImage = u.absPathGen(
-        `https://cdn.jsdelivr.net/gh/pr0ggy/dwp-ext@${jsdelivrVersion}`,
-        ['img', 'finish-swatches-small']
-    );
+    const pathForFinishSwatchImage = R.concat(require.toUrl('img/finish-swatches-small/'));
 
     dwpConfig.finishOptionSwatchURLMap = {
         'Asian Night': pathForFinishSwatchImage('asian-night.png'),
@@ -23,7 +19,7 @@ define(function (require) {
         'White Cypress': pathForFinishSwatchImage('white-cypress.png')
     };
 
-    const dwpLaminateCollectionAbsURL = u.absPathGen('http://www.duboiswood.com/hospitality/laminate-collections', []);
+    const dwpLaminateCollectionAbsURL = R.concat('http://www.duboiswood.com/hospitality/laminate-collections/');
 
     dwpConfig.laminateGroupAvailableFinishMap = {
         'urban-jazz': {

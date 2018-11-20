@@ -1,6 +1,5 @@
 define(function (require) {
 
-    const u = require('app/util');
     const $ = require('lib/zepto-1.2.0');
     const R = require('lib/ramda');
     const dwpConf = require('dwp-config');
