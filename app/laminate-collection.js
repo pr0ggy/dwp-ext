@@ -33,7 +33,9 @@ define(function (require) {
             <div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-available-finishes">
                 <div class="sqs-block-content">
                     <h2>Available Finishes</h2>
-                    ${finishOptionLinkElements.join("\n")}
+                    <div class="finish-option-links-wrapper">
+                        ${finishOptionLinkElements.join("\n")}
+                    </div>
                 </div>
             </div>`);
 
