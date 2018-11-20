@@ -17,7 +17,10 @@ define(function (require) {
         );
 
         const availableFinishNamesForThisGroup = Object.keys(currentGroupAvailableFinishURLMap);
-        if (availableFinishNamesForThisGroup.length <= 1) return;
+        if (availableFinishNamesForThisGroup.length <= 1) {
+            console.log('No finish option data available for group: ', collectionHREF);
+            return;
+        }
 
         const finishOptionLinkElements = R.map(function(finishName) {
             return `
