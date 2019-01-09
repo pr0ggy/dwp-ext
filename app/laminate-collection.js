@@ -2,7 +2,10 @@ define(function (require) {
 
     const $ = require('lib/zepto-1.2.0');
     const R = require('lib/ramda');
-    const dwpConf = require('dwp-config');
+
+    // dwpConfig is now a global declared in SquareSpace header code injection
+    // const dwpConf = require('dwp-config');
+    dwpConf = dwpConfig;
 
     function addFinishOptionLinks(collectionHREF) {
         const currentGroupAvailableFinishURLMap = R.reduce(
