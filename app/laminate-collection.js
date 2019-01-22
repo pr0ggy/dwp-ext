@@ -34,6 +34,11 @@ define(function (require) {
         }, availableFinishNamesForThisGroup);
 
         const $groupResourcesBlock = $('#page .col:first-child > div:last-child');
+        const $finishOptionSpacerBlock = $(`
+            <div class="sqs-block spacer-block sqs-block-spacer" data-aspect-ratio="2.857142857142857" data-block-type="21">
+                <div class="sqs-block-content sqs-intrinsic" style="padding-bottom: 2.85714%;" id="">&nbsp;</div>
+            </div>
+        `);
         const $finishOptionsBlock = $(`
             <div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-available-finishes">
                 <div class="sqs-block-content">
@@ -45,6 +50,7 @@ define(function (require) {
             </div>`);
 
         $groupResourcesBlock.after($finishOptionsBlock);
+        $finishOptionsBlock.before($finishOptionSpacerBlock);
     }
 
 
