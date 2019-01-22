@@ -27,7 +27,10 @@ define(function (require) {
     onURLsMatching(/hospitality\/laminate-collections\/.+$/, function () {
         console.log('DWP LAMINATE COLLECTION');
 
-        laminateCollection.addFinishOptionLinks(window.location.href);
+        // add 350ms delay to prevent the finish link block from rendering above the casegood 
+        // unit gallery block
+        // laminateCollection.addFinishOptionLinks(window.location.href);
+        setTimeout(function () { laminateCollection.addFinishOptionLinks(window.location.href); }, 350);
     });
 
 });
