@@ -24,7 +24,7 @@ define(function (require) {
      * On any given Laminate Collection page, we may need to show links to multiple
      * finish options...
      */
-    onURLsMatching(/hospitality\/laminate-collections\/.+$/, function () {
+    onURLsMatching(/hospitality\/[a-z\-]*laminate-collections\/.+$/, function () {
         console.log('DWP LAMINATE COLLECTION');
 
         // add 350ms delay to prevent the finish link block from rendering above the casegood 
